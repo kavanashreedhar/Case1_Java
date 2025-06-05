@@ -18,7 +18,7 @@ pipeline {
 
         stage('Checkout From Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/bhavanigowda987/Case1_Repo'
+                git branch: 'main', url: 'https://github.com/kavanashreedhar/Case1_Java.git/'
             }
         }
 
