@@ -1,9 +1,13 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'maven'
+    }
 
     environment {
-        SCANNER_HOME = tool 'sonar-scanner'
+        SCANNER_HOME = tool 'sonar-scanner-latest'
+
     }
 
     stages {
@@ -15,7 +19,7 @@ pipeline {
 
         stage('Checkout From Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/kavanashreedhar/Case1_Java.git/'
+                git branch: 'main', url: 'https://github.com/kavanashreedhar/Case1_Java.git'
             }
         }
 
@@ -30,5 +34,5 @@ pipeline {
                 sh 'mvn test'
             }
         }
-    } // closes stages
-} 
+    }
+}
